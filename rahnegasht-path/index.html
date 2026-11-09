@@ -36,12 +36,19 @@
   #card { position:fixed; right:calc(28px + env(safe-area-inset-right)); bottom:calc(28px + env(safe-area-inset-bottom)); width:min(42vw, 900px); height:auto;
           opacity:0; transform:translateY(24px); transition:opacity .45s, transform .45s; }
   #card.show { opacity:1; transform:none; }
-  #card.summit { width:min(34vw, 720px); }
+  #card.summit { width:min(30vw, 640px); }
   #help { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(5,4,18,.55); pointer-events:auto; z-index:24; }
   #help img { max-width:84vw; max-height:84vh; }
   .prompt { position:fixed; left:50%; bottom:calc(46px + env(safe-area-inset-bottom)); transform:translateX(-50%); width:min(34vw, 520px); min-width:260px; cursor:pointer; pointer-events:auto;
             animation:pulse 2.2s ease-in-out infinite; z-index:15; }
   @keyframes pulse { 0%,100% { opacity:.8 } 50% { opacity:1 } }
+  .sitebtn { position:fixed; left:50%; bottom:calc(58px + max(260px, min(34vw, 520px)) * 0.149 + env(safe-area-inset-bottom)); transform:translateX(-50%); z-index:16; pointer-events:auto; text-decoration:none;
+             display:flex; flex-direction:column; align-items:center; gap:2px; padding:14px 38px; border-radius:22px; color:#EAF6F8;
+             background:linear-gradient(160deg, rgba(28,190,203,.28), rgba(20,14,44,.85)); border:1.5px solid rgba(28,190,203,.85);
+             box-shadow:0 0 40px rgba(28,190,203,.45); backdrop-filter:blur(6px); transition:transform .15s; }
+  .sitebtn:hover { transform:translateX(-50%) translateY(-2px); }
+  .sitebtn .t { font-size:clamp(14px,2vh,18px); font-weight:600; opacity:.85; }
+  .sitebtn .u { font-size:clamp(22px,3.6vh,34px); font-weight:900; direction:ltr; color:#BFF5FA; letter-spacing:.5px; }
   #skip { left:auto; right:calc(28px + env(safe-area-inset-right)); transform:none; width:min(24vw, 360px); min-width:200px; z-index:25; }
   #fade { position:fixed; inset:0; background:#000; opacity:0; pointer-events:none; z-index:22; }
   #video { position:fixed; inset:0; width:100%; height:100%; background:#000; object-fit:contain; z-index:20; }
@@ -60,6 +67,16 @@
   .tbtn.down { opacity:1; transform:scale(1.08); }
   #tjump { width:20vh; height:20vh; right:calc(7vh + env(safe-area-inset-right)); bottom:12vh; }
   #tboost { width:17vh; height:17vh; right:calc(32vh + env(safe-area-inset-right)); bottom:5vh; }
+  /* phones: project card top-right (clear of the touch buttons), progress at the bottom */
+  @media (pointer: coarse) {
+    #card { top:calc(66px + env(safe-area-inset-top)); bottom:auto; right:calc(12px + env(safe-area-inset-right)); width:min(44vw, 64vh); transform:translateY(-16px); }
+    #card.summit { width:min(40vw, 58vh); }
+    #progress { top:auto; bottom:calc(10px + env(safe-area-inset-bottom)); gap:10px; }
+    #progress i { width:9px; height:9px; }
+    .sitebtn { bottom:calc(24px + max(260px, min(34vw, 520px)) * 0.149 + env(safe-area-inset-bottom)); padding:6px 20px; }
+    .sitebtn .u { font-size:20px; } .sitebtn .t { font-size:12px; }
+    .prompt { bottom:calc(16px + env(safe-area-inset-bottom)); }
+  }
   @media (max-aspect-ratio: 1/1) {
     #rotate { display:flex !important; }
   }
@@ -72,6 +89,9 @@
 <div id="hud" class="layer">
   <div id="progress"></div>
   <img id="card" alt="">
+  <a id="site" class="sitebtn hidden" href="https://rahnegasht.com" target="_blank" rel="noopener">
+    <span class="t">ورود به وب‌سایت رهنگاشت</span><span class="u">rahnegasht.com ↗</span>
+  </a>
   <img id="restart" class="prompt hidden" alt="تجربه یه مسیر تازه">
   <img id="skip" class="prompt hidden" alt="رد کردن ویدیو">
   <div id="topbtns">
