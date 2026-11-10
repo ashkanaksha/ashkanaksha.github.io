@@ -115,14 +115,14 @@
   .tile:hover { transform:translateY(-1px); } .tile.on { border-color:rgba(28,190,203,.7); background:linear-gradient(135deg, rgba(28,190,203,.25), rgba(255,255,255,.05)); }
   .tile .wm { direction:ltr; font-size:clamp(10px,.9vw,12px); font-weight:800; letter-spacing:.02em; } .tile .wm b { color:#1CBECB; }
   .tile.more { flex-direction:column; gap:2px; cursor:default; border:1px dashed rgba(255,255,255,.18); } .tile.more b { font-size:15px; font-weight:600; color:#BFF5FA; } .tile.more small { font-size:10px; opacity:.6; }
-  #cdetail { margin-top:10px; border-radius:16px; padding:12px 14px; display:flex; gap:12px; align-items:flex-start; min-height:86px; }
+  #cdetail { margin-top:10px; border-radius:16px; padding:12px 14px; max-height:min(250px,34vh); overflow-y:auto; scrollbar-width:thin; display:flex; gap:12px; align-items:flex-start; min-height:86px; }
   #cdetail .chip { flex:none; width:58px; height:58px; border-radius:12px; background:#fff center/78% no-repeat; display:none; box-shadow:0 6px 18px rgba(0,0,0,.3); }
   #cdetail.has .chip { display:block; }
   #cdetail .chip.wm { background:#0d0b26; display:flex; align-items:center; justify-content:center; direction:ltr; font-size:11px; font-weight:800; color:#fff; border:1px solid rgba(255,255,255,.15); } #cdetail .chip.wm b { color:#1CBECB; }
   #cdetail .txt { min-width:0; } #cdetail .txt > b { display:block; font-size:clamp(12px,1.05vw,14px); font-weight:600; color:#F4FCFD; }
   #cdetail .txt > small { display:block; font-size:clamp(9.5px,.8vw,11px); color:rgba(191,245,250,.7); margin-top:2px; line-height:1.7; }
   #cdetail ul { margin:7px 0 0; padding:0 14px 0 0; font-size:clamp(10px,.82vw,11.5px); font-weight:300; color:rgba(234,246,248,.82); line-height:1.75; }
-  #cdetail ul li::marker { color:#1CBECB; }
+  #cdetail ul li::marker { color:#1CBECB; } #cdetail ul strong { font-weight:600; color:#DDF8FB; }
   .marquee { margin-top:12px; overflow:hidden; direction:ltr; -webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent); mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent); }
   .marquee .track { display:flex; align-items:center; gap:26px; width:max-content; animation:mq 50s linear infinite; }
   .marquee img { height:22px; width:auto; opacity:.5; }
@@ -199,7 +199,7 @@
     </div>
     <div class="view" id="vclients">
       <div class="grid">
-        <button class="tile glass" type="button" data-k="benis" data-col="assets/clients/benis.webp"><img src="assets/clients/benis_w.webp" alt="کیک بنیس"><template><b>کیک بنیس</b><small>تولیدکننده‌ی کیک و شیرینی صنعتی</small><ul><li>بازتعریف استراتژی برند برای نسل Z و آلفا — استراتژی «پرشیانا» با زبان بصری رترو‑مدرن</li><li>ممیزی و بازطراحی حضور اینستاگرامی برند</li><li>طراحی کمپین تعاملی با یک بازی تحت وب</li></ul></template></button>
+        <button class="tile glass" type="button" data-k="benis" data-col="assets/clients/benis.webp"><img src="assets/clients/benis_w.webp" alt="کیک بنیس"><template><b>کیک بنیس</b><small>همراهی با بنیس در طراحی و توسعه‌ی زیرساخت‌های راهبردی، بازاریابی و فروش — برای تقویت جایگاه برند، توسعه‌ی بازار و بهبود عملکرد سازمان.</small><ul><li><strong>استراتژی برند و توسعه بازار</strong> — طراحی استراتژی «پرشیانا» برای نسل Z و آلفا و بازتعریف ارتباط برند با نسل‌های جدید</li><li><strong>ممیزی رسانه‌های دیجیتال</strong> — ممیزی اینستاگرام، تحلیل عملکرد محتوا و راهبرد بهبود حضور دیجیتال</li><li><strong>داشبورد هوشمند اختصاصی</strong> — پایش داده‌محور فروش و بازاریابی و پشتیبانی تصمیم‌گیری با هوش مصنوعی</li><li><strong>توانمندسازی تیم فروش</strong> — آموزش مهارت‌ها، بهبود تعامل با مشتری و اثربخشی فعالیت‌های میدانی</li><li><strong>سیستم فروش پارتیزانی</strong> — مدل نفوذ جغرافیایی، جذب مشتری جدید، ویزیت گرم و افزایش پوشش بازار</li><li><strong>بهبود فرایندهای مارکتینگ</strong> — رفع گلوگاه‌ها، بازطراحی فرایندها و نظام پایش و ارزیابی عملکرد</li><li><strong>تجربه و روایت برند</strong> — روایت منسجم برند، ارتباط عاطفی با مخاطب و برجسته‌سازی اصالت بنیس</li><li><strong>فناوری و اتوماسیون</strong> — پروژه‌های هوشمندسازی و مکانیزاسیون، از جمله رباتیک بسته‌بندی</li></ul></template></button>
         <button class="tile glass" type="button" data-k="giftcard" data-col=""><span class="wm">giftcard<b>.ir</b></span><template><b>گیفت‌کارت</b><small>فروشگاه آنلاین گیفت‌کارت، اشتراک بازی و سرویس‌های دیجیتال</small><ul><li>استراتژی محتوا برای مخاطب نسل Z</li><li>راه‌اندازی رادار روزانه‌ی ترندها با هوش مصنوعی برای تیم شبکه‌های اجتماعی</li><li>تبدیل ترندهای گیم، استریم و تکنولوژی به ایده‌ی محتوای فروش‌محور</li></ul></template></button>
         <button class="tile glass" type="button" data-k="kaleh" data-col="assets/clients/kaleh.webp"><img src="assets/clients/kaleh_w.webp" alt="کاله"><template><b>کاله</b><small>از بزرگ‌ترین تولیدکنندگان لبنیات و مواد غذایی ایران</small><ul><li>طراحی و اجرای طرح‌های بازاریابی</li></ul></template></button>
         <button class="tile glass" type="button" data-k="henkel" data-col="assets/clients/henkel.webp"><img src="assets/clients/henkel_w.webp" alt="هنکل"><template><b>هنکل</b><small>شرکت چندملیتی آلمانی در شوینده، بهداشتی و چسب</small><ul><li>بازاریابی تجاری (Trade Marketing) و فعال‌سازی کانال فروش</li></ul></template></button>
@@ -217,7 +217,7 @@
     </div>
   </div>
   <div id="tagline">
-    <div class="kick line l1">به قله رسیدید — ۱۰ ایستگاه، یک مسیر</div>
+    <div class="kick line l1">به قله رسیدید — ۸ ایستگاه، یک مسیر</div>
     <h1><span class="line l2">مسیر برند شما</span><span class="line l3"><b>از اینجا شروع می‌شود</b></span></h1>
     <div class="sub line l4">گروه مشاوره مارکتینگ رهنگاشت — استراتژی، برندینگ و هوش مصنوعی، در یک مسیر.</div>
     <div class="rule"></div>
@@ -266,6 +266,6 @@
   }); });
 })();
 </script>
-<script src="game.js?v=20261110d"></script>
+<script src="game.js?v=20261110f"></script>
 </body>
 </html>
